@@ -1,0 +1,14 @@
+[
+  { "name": "Sunglasses", "img": "/type/sunglasses.jpg" },
+  {
+    "name": "Blue Light",
+    "img": "/type/eyeglasses.jpg"
+  },
+  {
+    "name": "reading glasses",
+    "img": "/type/reading-glasses.jpg"
+  },
+  { "name": "computer glasses", "img": "/type/computerglasses.jpg" },
+  { "name": "contact lenses", "img": "/type/contactlens.png" },
+  { "name": "accesories", "img": "/type/accessories.jpg" }
+]
