@@ -121,13 +121,13 @@ body {
 
 /* Hero Title */
 .hero-title {
-  font-family: "Playfair Display", serif;
+  font-family: "Open Sans", sans-serif;
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 700;
   color: var(--ebony);
   margin-bottom: 1rem;
   line-height: 1.1;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   position: relative;
   top: -10px; /* Move title further up */
 }
@@ -135,7 +135,7 @@ body {
 /* Hero Subtitle */
 .hero-subtitle {
   font-size: clamp(1.2rem, 3vw, 1.5rem);
-  color: var(--torea-bay);
+  color: var(--ebony);
   margin-bottom: 2rem;
   font-weight: 300;
   opacity: 0.9;

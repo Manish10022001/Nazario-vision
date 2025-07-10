@@ -11,7 +11,8 @@ export function Header() {
     <header className="header">
       <div className="nav-container">
         <a href="#home" className="logo">
-          Nazario
+           <img src="/logo.jpg" alt="Nazario Logo" style={{ height: "40px", marginRight: "10px" }} />
+          <span style={{ fontSize: "30px", fontWeight: "bold", color: "#333" }}></span>
         </a>
         <nav>
           <ul className="nav-links">
