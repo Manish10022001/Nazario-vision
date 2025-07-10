@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 
 import { Home } from "./controller/Home";
-import {Header} from "./controller/Header";
+import { Header } from "./controller/Header";
 import { EyewearTypeSection } from "./controller/EyewearTypeSection";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CollectionCard } from "./controller/CollectionCard";
@@ -31,6 +31,7 @@ export default function App() {
       <main>
         <Home />
         <CollectionCard product={products} />
+
         <EyewearTypeSection type={type} />
       </main>
       {/* <ProductCarousel /> */}

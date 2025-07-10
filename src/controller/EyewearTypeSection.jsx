@@ -1,9 +1,6 @@
 export function EyewearTypeSection({type}){
     return(
         <section id="eyewear-by-type" className="eyewear-type-section">
-        <span style={{ color: "iron", opacity: "0.4" }}>
-          FIND YOUR PEREFECT PAIR
-        </span>
         <h2 className="eyewear-section-title">
           THE RIGHT EYEWEAR FOR EVERY NEED
         </h2>
