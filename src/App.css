@@ -203,6 +203,22 @@ body {
 .card {
   width: 100%; /* Make sure cards are responsive */
   max-width: 18rem; /* Optional: Set max-width for cards */
+  transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card-img-top {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1), filter 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.08) translateY(-8px);
+  box-shadow: 0 12px 36px 0 rgba(65, 105, 225, 0.18), 0 4px 16px 0 rgba(0,0,0,0.12);
+  filter: brightness(1.08) saturate(1.15) drop-shadow(0 2px 8px rgba(65,105,225,0.10));
+  border-radius: 16px;
+  z-index: 3;
 }
 
 .button-container {
@@ -287,6 +303,102 @@ body {
   color: var(--torea-bay);
 }
 
+/* Login and Signup Css */
+.loginSignupContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.myLoginSignupForm {
+  border: 2px solid white;
+  color: rgb(8, 8, 8);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  max-height: 540px;
+  min-height: 400px;
+  background: white;
+  border-radius: 10px;
+  overflow-y: auto;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  scrollbar-width: thin;
+  scrollbar-color: #b3b3b3 #f5f5f5;
+}
+
+.myLoginSignupForm::-webkit-scrollbar {
+  width: 8px;
+}
+.myLoginSignupForm::-webkit-scrollbar-thumb {
+  background: #b3b3b3;
+  border-radius: 6px;
+}
+.myLoginSignupForm::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 6px;
+}
+
+.myLoginSignupForm h1 {
+  margin-bottom: 30px;
+}
+
+.loginSignupForm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+form input {
+  margin: 6px;
+  padding: 15px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: none;
+}
+
+button {
+  border: none;
+  padding: 15px;
+  width: 150px;
+  border-radius: 10px;
+  background: none;
+}
+
+.loginSignupButtons {
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.myLoginSignup {
+  background: linear-gradient(to right, #0d47a1, #42a5f5);
+  color: white;
+}
+
+.loginSignupForm a {
+  text-decoration: none;
+  color: rgb(77, 109, 214);
+  margin-left: 5px;
+}
+
+.loginSignup {
+  border: 1px solid gray;
+  background: linear-gradient(to right, #0d47a1, #42a5f5);
+  color: wheat;
+  width: 100%;
+  margin-top: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.account a {
+  text-decoration: none;
+}
+
+.account {
+  margin-top: 30px;
+}
 
 /* .product-carousel-section {
   max-width: 900px;

@@ -31,7 +31,6 @@ export default function App() {
       <main>
         <Home />
         <CollectionCard product={products} />
-
         <EyewearTypeSection type={type} />
       </main>
       {/* <ProductCarousel /> */}
