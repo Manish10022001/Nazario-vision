@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
 
-import { Home } from "./controller/Home";
-import { Header } from "./controller/Header";
-import { EyewearTypeSection } from "./controller/EyewearTypeSection";
+import { Home } from "./Components/Home";
+import { Header } from "./Components/Header";
+import { EyewearTypeSection } from "./Components/EyewearTypeSection";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { CollectionCard } from "./controller/CollectionCard";
+import { CollectionCard } from "./Components/CollectionCard";
 
 import products from "./data/products.json";
 import type from "./data/type.json";

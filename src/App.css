@@ -189,6 +189,39 @@ body {
   transform: translateY(-2px);
 }
 /* Header component complete */
+
+/* Collection Card component css */
+/* Grid layout for product cards */
+.product-collection-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px; /* Space between cards */
+  justify-items: center; /* Center items in their grid cells */
+}
+
+/* Card styling */
+.card {
+  width: 100%; /* Make sure cards are responsive */
+  max-width: 18rem; /* Optional: Set max-width for cards */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; /* Adds some space between the content and buttons */
+}
+
+.action-button {
+  width: 48%; /* Buttons take equal space, slightly less than half */
+  margin: 0; /* Remove default margin */
+}
+
+/* Optional: Add a hover effect to buttons for better interactivity */
+.action-button:hover {
+  background-color: #0056b3; /* Change button color on hover */
+  border-color: #0056b3;
+}
+
 /* Eyewear Type component css */
 .eyewear-type-section {
   width: 100%;
@@ -254,37 +287,6 @@ body {
   color: var(--torea-bay);
 }
 
-/* Collection Card component css */
-/* Grid layout for product cards */
-.product-collection-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
-  gap: 20px; /* Space between cards */
-  justify-items: center; /* Center items in their grid cells */
-}
-
-/* Card styling */
-.card {
-  width: 100%; /* Make sure cards are responsive */
-  max-width: 18rem; /* Optional: Set max-width for cards */
-}
-
-.button-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px; /* Adds some space between the content and buttons */
-}
-
-.action-button {
-  width: 48%; /* Buttons take equal space, slightly less than half */
-  margin: 0; /* Remove default margin */
-}
-
-/* Optional: Add a hover effect to buttons for better interactivity */
-.action-button:hover {
-  background-color: #0056b3; /* Change button color on hover */
-  border-color: #0056b3;
-}
 
 /* .product-carousel-section {
   max-width: 900px;
