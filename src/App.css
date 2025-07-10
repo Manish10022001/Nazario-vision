@@ -188,7 +188,7 @@ body {
   color: white;
   transform: translateY(-2px);
 }
-
+/* Header component complete */
 /* Eyewear Type component css */
 .eyewear-type-section {
   width: 100%;
@@ -254,8 +254,8 @@ body {
   color: var(--torea-bay);
 }
 
-/*  */
-
+/* Collection Card component css */
+/* Grid layout for product cards */
 .product-collection-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 columns */
@@ -263,45 +263,27 @@ body {
   justify-items: center; /* Center items in their grid cells */
 }
 
+/* Card styling */
 .card {
   width: 100%; /* Make sure cards are responsive */
   max-width: 18rem; /* Optional: Set max-width for cards */
 }
 
-.show-more-button,
-.show-less-button {
-  padding: 8px 18px;
-  background: transparent;
-  border: 1px solid #007bff; /* Use the same color as the theme or the section's background */
-  color: #007bff;
-  border-radius: 20px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  outline: none;
-  margin-top: 10px;
-  opacity: 0.8; /* Slightly transparent initially */
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; /* Adds some space between the content and buttons */
 }
 
-.show-more-button:hover,
-.show-less-button:hover {
-  background-color: #007bff;
-  color: #fff;
-  opacity: 1;
-  transform: translateY(-3px); /* Subtle lift effect */
+.action-button {
+  width: 48%; /* Buttons take equal space, slightly less than half */
+  margin: 0; /* Remove default margin */
 }
 
-.show-more-button:focus,
-.show-less-button:focus {
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
-}
-
-.show-more-button:active,
-.show-less-button:active {
-  transform: scale(0.98); /* Slight shrink effect */
+/* Optional: Add a hover effect to buttons for better interactivity */
+.action-button:hover {
+  background-color: #0056b3; /* Change button color on hover */
+  border-color: #0056b3;
 }
 
 /* .product-carousel-section {

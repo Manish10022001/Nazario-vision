@@ -2,6 +2,8 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import { ChevronsDown, ChevronsUp } from "lucide-react";
+
 import React, { useState } from "react";
 export function CollectionCard({ product }) {
   const [visibleCount, setVisibleCount] = useState(8);
@@ -13,7 +15,10 @@ export function CollectionCard({ product }) {
   }
 
   return (
-    <div className="product-collection" style={{ padding: "20px", marginTop: "20px" }}>
+    <div
+      className="product-collection"
+      style={{ padding: "20px", marginTop: "20px" }}
+    >
       <h2 className="eyewear-section-title">OUR COLLECTION</h2>
       <div className="product-collection-row">
         {product.slice(0, visibleCount).map((item, index) => (
@@ -36,23 +41,32 @@ export function CollectionCard({ product }) {
                 <strong>Product Type: </strong> {item.product_type} <br />
                 <strong>Frame Type: </strong> {item.frame_type} <br />
               </Card.Text>
-              <Button variant="primary">Add to Cart</Button>
-              <Button variant="primary" style={{ marginLeft: "10px" }}>
-                Buy Now
-              </Button>
+              <div className="button-container">
+                <Button variant="primary" className="action-button">
+                  Add to Cart
+                </Button>
+                <Button variant="danger" className="action-button">
+                  Buy Now
+                </Button>
+              </div>
             </Card.Body>
           </Card>
         ))}
       </div>
-      {visibleCount < product.length ? (
-        <Button className="show-more-button" variant="secondary" onClick={handleShowMore} style={{ marginTop: '20px' }}>
-          Show More...
-        </Button>
-      ) : (
-        <Button className="show-less-button" variant="secondary" onClick={handleShowLess}>
-          Show Less...
-        </Button>
-      )}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItem: "center",
+          marginTop: "20px",
+        }}
+      >
+        {visibleCount < product.length ? (
+          <ChevronsDown onClick={handleShowMore} />
+        ) : (
+          <ChevronsUp onClick={handleShowLess} />
+        )}
+      </div>
     </div>
   );
 }
