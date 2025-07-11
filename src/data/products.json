@@ -14,7 +14,8 @@
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/JJ+S12956%23964b00/JJ+S12956%23964b001.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/JJ+S12956%23964b00/JJ+S12956%23964b002.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/JJ+S12956%23964b00/JJ+S12956%23964b003.jpg"
-    ]
+    ],
+    "rating": 4.5
   },
   {
     "_id": "653aecf061a11eecb45b17ac",
@@ -31,7 +32,8 @@
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S14677%23964b00/VC+S14677%23964b001.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S14677%23964b00/VC+S14677%23964b002.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S14677%23964b00/VC+S14677%23964b003.jpg"
-    ]
+    ],
+    "rating": 4.0
   },
   {
     "_id": "653aecf061a11eecb45b17ad",
@@ -48,7 +50,8 @@
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/JJ+S12956%2300ff00/JJ+S12956%2300ff001.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/JJ+S12956%2300ff00/JJ+S12956%2300ff002.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/JJ+S12956%2300ff00/JJ+S12956%2300ff003.jpg"
-    ]
+    ],
+    "rating": 4.0
   },
   {
     "_id": "653aecf061a11eecb45b17ae",
@@ -65,7 +68,8 @@
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S14677%23000001/VC+S14677%230000011.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S14677%23000001/VC+S14677%230000012.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S14677%23000001/VC+S14677%230000013.jpg"
-    ]
+    ],
+    "rating": 2.0
   },
   {
     "_id": "653aecf061a11eecb45b17af",
@@ -82,7 +86,8 @@
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S11167%230000ff/VC+S11167%230000ff1.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S11167%230000ff/VC+S11167%230000ff2.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S11167%230000ff/VC+S11167%230000ff3.jpg"
-    ]
+    ],
+    "rating": 5.0
   },
   {
     "_id": "653aecf061a11eecb45b17b0",
@@ -99,7 +104,8 @@
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S14505%230000ff/VC+S14505%230000ff1.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S14505%230000ff/VC+S14505%230000ff2.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S14505%230000ff/VC+S14505%230000ff3.jpg"
-    ]
+    ],
+    "rating": 3.5
   },
   {
     "_id": "653aecf061a11eecb45b17b1",
@@ -116,7 +122,8 @@
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S11075%230000ff/VC+S11075%230000ff1.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S11075%230000ff/VC+S11075%230000ff2.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S11075%230000ff/VC+S11075%230000ff3.jpg"
-    ]
+    ],
+    "rating": 4.0
   },
   {
     "_id": "653aecf061a11eecb45b17b2",
@@ -133,7 +140,8 @@
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/LK+E15208%23ffd700/LK+E15208%23ffd7001.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/LK+E15208%23ffd700/LK+E15208%23ffd7002.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/LK+E15208%23ffd700/LK+E15208%23ffd7003.jpg"
-    ]
+    ],
+    "rating": 3.0
   },
   {
     "_id": "653aecf061a11eecb45b17b3",
@@ -149,7 +157,8 @@
     "image_paths": [
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S11167%2300ff00/VC+S11167%2300ff002.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S11167%2300ff00/VC+S11167%2300ff003.jpg"
-    ]
+    ],
+    "rating": 4.0
   },
   {
     "_id": "653aecf061a11eecb45b17b4",
@@ -166,7 +175,8 @@
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S11167%23a0a0f0/VC+S11167%23a0a0f01.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S11167%23a0a0f0/VC+S11167%23a0a0f02.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S11167%23a0a0f0/VC+S11167%23a0a0f03.jpg"
-    ]
+    ],
+    "rating": 4.0
   },
   {
     "_id": "653aecf061a11eecb45b17b5",
@@ -183,7 +193,8 @@
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S11167%2300ff00/VC+S11167%2300ff001.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S11167%2300ff00/VC+S11167%2300ff002.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S11167%2300ff00/VC+S11167%2300ff003.jpg"
-    ]
+    ],
+    "rating": 5.0
   },
   {
     "_id": "653aecf061a11eecb45b17b6",
@@ -199,6 +210,7 @@
     "image_paths": [
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S11167%230000ff/VC+S11167%230000ff2.jpg",
       "https://f005.backblazeb2.com/file/eyewear-database-images/downhere/VC+S11167%230000ff/VC+S11167%230000ff3.jpg"
-    ]
+    ],
+    "rating": 4.0
   }
 ]
