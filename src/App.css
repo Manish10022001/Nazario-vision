@@ -97,7 +97,33 @@ body {
 .nav-links a:hover {
   color: var(--royal-blue);
 }
+/* signup button */
+.header-btn-signup {
+  padding: 8px 18px;
+  border: 1px solid #333;
+  border-radius: 20px;
+  background: #333;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+/* login button */
+.header-btn-login {
+  padding: 8px 18px;
+  border: 1px solid #333;
+  border-radius: 20px;
+  background: white;
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+  cursor: pointer;
+  margin-right: 8px;
+}
 
+/* Home componenet css */
 #home {
   height: 100vh;
   background: url("/background.jpg") no-repeat center center/cover; /* Direct path to the image */
@@ -129,7 +155,7 @@ body {
   line-height: 1.1;
   letter-spacing: 1px;
   position: relative;
-  top: -10px; /* Move title further up */
+  top: -10px;
 }
 
 /* Hero Subtitle */
@@ -139,9 +165,9 @@ body {
   margin-bottom: 2rem;
   font-weight: 300;
   opacity: 0.9;
-  text-align: center; /* Ensure subtitle is centered */
+  text-align: center;
   position: relative;
-  top: -40px; /* Move subtitle further up */
+  top: -40px;
 }
 
 /* CTA Buttons */
@@ -204,21 +230,30 @@ body {
   width: 100%; /* Make sure cards are responsive */
   max-width: 18rem; /* Optional: Set max-width for cards */
   transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card {
+  /* ...existing card styles... */
+  transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover {
+  transform: scale(1.04) translateY(-8px);
+  box-shadow: 0 12px 36px 0 rgba(65, 105, 225, 0.18),
+    0 4px 16px 0 rgba(0, 0, 0, 0.12);
+  filter: brightness(1.08) saturate(1.08)
+    drop-shadow(0 2px 8px rgba(65, 105, 225, 0.1));
+  border-radius: 16px;
+  z-index: 3;
 }
 
 .card-img-top {
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1), filter 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-}
-
-.card:hover .card-img-top {
-  transform: scale(1.08) translateY(-8px);
-  box-shadow: 0 12px 36px 0 rgba(65, 105, 225, 0.18), 0 4px 16px 0 rgba(0,0,0,0.12);
-  filter: brightness(1.08) saturate(1.15) drop-shadow(0 2px 8px rgba(65,105,225,0.10));
-  border-radius: 16px;
-  z-index: 3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: inherit;
 }
 
 .button-container {
@@ -228,13 +263,12 @@ body {
 }
 
 .action-button {
-  width: 48%; /* Buttons take equal space, slightly less than half */
-  margin: 0; /* Remove default margin */
+  width: 48%;
+  margin: 0;
 }
 
-/* Optional: Add a hover effect to buttons for better interactivity */
 .action-button:hover {
-  background-color: #0056b3; /* Change button color on hover */
+  background-color: #0056b3;
   border-color: #0056b3;
 }
 
@@ -323,7 +357,7 @@ body {
   background: white;
   border-radius: 10px;
   overflow-y: auto;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
   scrollbar-width: thin;
   scrollbar-color: #b3b3b3 #f5f5f5;
 }
@@ -399,39 +433,3 @@ button {
 .account {
   margin-top: 30px;
 }
-
-/* .product-carousel-section {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.product-card {
-  padding: 1rem;
-  text-align: center;
-}
-
-.product-card h3 {
-  margin: 0.5rem 0;
-}
-
-.product-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 0.5rem;
-} */
-/* 
-.product-buttons button {
-  padding: 0.5rem 1rem;
-  border: none;
-  background-color: #4169e1;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.product-buttons button:hover {
-  background-color: #0f3460;
-} */
