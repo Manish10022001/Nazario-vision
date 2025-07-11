@@ -9,7 +9,7 @@ import { CollectionCard } from "./Components/CollectionCard";
 
 import products from "./data/products.json";
 import type from "./data/type.json";
-import { Footer } from "./Components/Footer";
+
 // const type = [
 //   { name: "Sunglasses", img: "/type/sunglasses.jpg" },
 //   {
