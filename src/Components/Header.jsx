@@ -43,36 +43,13 @@ export function Header() {
           {/* Auth buttons on the right */}
           <div className="nav-actions">
             <button
-              className="header-btn"
-              style={{
-                padding: "8px 18px",
-                border: "1px solid #333",
-                borderRadius: "20px",
-                background: "white",
-                color: "#333",
-                fontWeight: 500,
-                textDecoration: "none",
-                transition: "background 0.2s",
-                cursor: "pointer",
-                marginRight: "8px",
-              }}
+              className="header-btn-login"
               onClick={() => setCurrentPage("login")}
             >
               Login
             </button>
             <button
-              className="header-btn"
-              style={{
-                padding: "8px 18px",
-                border: "1px solid #333",
-                borderRadius: "20px",
-                background: "#333",
-                color: "white",
-                fontWeight: 500,
-                textDecoration: "none",
-                transition: "background 0.2s",
-                cursor: "pointer",
-              }}
+              className="header-btn-signup"
               onClick={() => setCurrentPage("signup")}
             >
               Signup
@@ -80,6 +57,7 @@ export function Header() {
           </div>
         </div>
       </header>
+      
       {/* Conditionally render Login or SignUp in a modal */}
       {(currentPage === "login" || currentPage === "signup") && (
         <div
