@@ -17,7 +17,7 @@ function SignUp({ setCurrentPage }) {
 
   return (
     <div className="loginSignupContainer" id="logininfo">
-      <div className="myLoginSignupForm" style={{ position: "relative" }}>
+      <div className="myLoginSignupForm" style={{ position: "relative" }}> {/* position relative import for keeping x(close) in modal*/}
         <button
           type="button"
           className="btn btn-close"
