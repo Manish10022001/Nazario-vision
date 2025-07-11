@@ -64,9 +64,8 @@ export function CollectionCard({ product }) {
               variant="top"
               style={{
                 height: "150px",
-                width: "90%",
+                width: "100%",
                 objectFit: "cover",
-                paddingLeft: "30px",
               }}
               src={item.image_paths[0]}
             />
