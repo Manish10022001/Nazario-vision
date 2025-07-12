@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { ShoppingCart, Search } from "lucide-react";
 import "../App.css";
 import Login from "../LoginSignUp/Login";
 import SignUp from "../LoginSignUp/SignUp";
 
-export function Header() {
-  const [currentPage, setCurrentPage] = useState(null); // 'login' | 'signup' | null
+export function Header({ cartItems, setSearchQuery }) {
+  const [currentPage, setCurrentPage] = useState(null);
+  const [showSearch, setShowSearch] = useState(false);
 
   const NavItems = [
     { title: "Home", link: "#home" },
@@ -20,7 +22,7 @@ export function Header() {
     <>
       <header className="header">
         <div className="nav-container">
-          {/* Logo on the left */}
+          {/* Logo */}
           <a href="#home" className="logo">
             <img
               src="/logo.jpg"
@@ -29,7 +31,7 @@ export function Header() {
             />
           </a>
 
-          {/* Nav items in the center */}
+          {/* Navigation Links */}
           <nav className="nav-center">
             <ul className="nav-links">
               {NavItems.map((item, index) => (
@@ -40,8 +42,46 @@ export function Header() {
             </ul>
           </nav>
 
-          {/* Auth buttons on the right */}
-          <div className="nav-actions">
+          {/* Right side actions */}
+          <div
+            className="nav-actions"
+            style={{ display: "flex", alignItems: "center", gap: "15px" }}
+          >
+            {
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "2px" }}
+              >
+                {/* Search toggle button */}
+                <button
+                  onClick={() => setShowSearch(!showSearch)}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    color: "var(--ebony)",
+                    padding: 0,
+                    display: "flex-wrap",
+                    alignItems: "center",
+                  }}
+                  aria-label="Search"
+                  title="Search"
+                >
+                  <Search size={24} />
+                </button>
+
+                {/* Cart icon with badge */}
+                <div
+                  style={{ position: "relative", cursor: "pointer" }}
+                  title="Cart"
+                >
+                  <ShoppingCart size={24} color="var(--ebony)" />
+                  {cartItems.length > 0 && (
+                    <span className="cart-badge">{cartItems.length}</span>
+                  )}
+                </div>
+              </div>
+            }
+            {/* Login and Signup */}
             <button
               className="header-btn-login"
               onClick={() => setCurrentPage("login")}
@@ -56,9 +96,35 @@ export function Header() {
             </button>
           </div>
         </div>
+
+        {/* Search input */}
+        {showSearch && (
+          <div
+            style={{
+              padding: "10px",
+              backgroundColor: "var(--light-blue-3)",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <input
+              type="text"
+              placeholder="Search products..."
+              onChange={(e) => setSearchQuery(e.target.value)}
+              style={{
+                width: "50%",
+                padding: "8px 12px",
+                borderRadius: "6px",
+                border: `1.5px solid var(--iron)`,
+                color: "var(--ebony)",
+                fontSize: "1rem",
+              }}
+            />
+          </div>
+        )}
       </header>
-      
-      {/* Conditionally render Login or SignUp in a modal */}
+
+      {/* Auth modals */}
       {(currentPage === "login" || currentPage === "signup") && (
         <div
           style={{
@@ -75,8 +141,7 @@ export function Header() {
           }}
           onClick={closeAuth}
         >
-          <div style={{}} onClick={(e) => e.stopPropagation()}>
-            {/* Close button handled inside Login/Signup modals */}
+          <div onClick={(e) => e.stopPropagation()}>
             {currentPage === "login" && (
               <Login setCurrentPage={setCurrentPage} />
             )}

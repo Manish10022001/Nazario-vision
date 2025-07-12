@@ -1,41 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 import { Home } from "./Components/Home";
 import { Header } from "./Components/Header";
 import { EyewearTypeSection } from "./Components/EyewearTypeSection";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { CollectionCard } from "./Components/CollectionCard";
-
-import products from "./data/products.json";
-import type from "./data/type.json";
 
 import { Footer } from "./Components/Footer";
 
-// const type = [
-//   { name: "Sunglasses", img: "/type/sunglasses.jpg" },
-//   {
-//     name: "Blue Light",
-//     img: "/type/eyeglasses.jpg",
-//   },
-//   {
-//     name: "reading glasses",
-//     img: "/type/reading-glasses.jpg",
-//   },
-//   { name: "computer glasses", img: "/type/computerglasses.jpg" },
-//   { name: "contact lenses", img: "/type/contactlens.png" },
-//   { name: "accesories", img: "/type/accessories.jpg" },
-// ];
+import "bootstrap/dist/css/bootstrap.min.css";
+import products from "./data/products.json";
+import type from "./data/type.json";
 
 export default function App() {
+  // Cart and favorites states
+  const [cartItems, setCartItems] = useState([]);
+  const [favorites, setFavorites] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Filter products by search query (brand or model)
+  const filteredProducts = products.filter(
+    (product) =>
+      product.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.model_no.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <>
-      <Header />
-
+      <Header cartItems={cartItems} setSearchQuery={setSearchQuery} />
       <main>
         <Home />
-        <CollectionCard product={products} />
+        <CollectionCard
+          product={filteredProducts}
+          cartItems={cartItems}
+          setCartItems={setCartItems}
+          favorites={favorites}
+          setFavorites={setFavorites}
+        />
         <EyewearTypeSection type={type} />
+        
       </main>
       <Footer />
     </>
