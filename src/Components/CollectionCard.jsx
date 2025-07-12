@@ -1,44 +1,25 @@
-import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Modal from "react-bootstrap/Modal";
+import Form from "react-bootstrap/Form";
+
 import { ChevronsDown, ChevronsUp } from "lucide-react";
 
-export function CollectionCard({
-  product,
-  cartItems,
-  setCartItems,
-  favorites,
-  setFavorites,
-}) {
-  const [visibleCount, setVisibleCount] = useState(8);
+import React, { useState } from "react";
+export function CollectionCard({ product }) {
+  //filter and modal states
+  const [showFilterModal, setShowFilterModal] = useState(false);
+  const handleFilterShow = () => setShowFilterModal(true);
+  const handleFilterClose = () => setShowFilterModal(false);
 
+  //products card use stateg
+  const [visibleCount, setVisibleCount] = useState(8);
   function handleShowMore() {
-    setVisibleCount(visibleCount + 4);
+    setVisibleCount(() => visibleCount + 4);
   }
   function handleShowLess() {
     setVisibleCount(8);
-  }
-
-  function handleAddToCart(item) {
-    {!cartItems.find((cartItem)=>cartItem.model_no === item.model_no) && setCartItems([...cartItems,item])}
-    // if (!cartItems.find((cartItem) => cartItem.model_no === item.model_no)) {
-    //   setCartItems([...cartItems, item]);
-    // }
-  }
-  function toggleFavorite(item) {
-    {
-      favorites.find((fav) => fav.model_no === item.model_no)
-        ? setFavorites(
-            favorites.filter((fav) => fav.model_no !== item.model_no)
-          )
-        : setFavorites([...favorites, item]);
-    }
-    // if (favorites.find((fav) => fav.model_no === item.model_no)) {
-    //   setFavorites(favorites.filter((fav) => fav.model_no !== item.model_no));
-    // } else {
-    //   setFavorites([...favorites, item]);
-    // }
   }
 
   return (
@@ -61,7 +42,7 @@ export function CollectionCard({
         </h2>
         <Button
           variant="primary"
-          onClick={() => {}}
+          onClick={handleFilterShow}
           style={{
             padding: "6px 12px",
             borderRadius: "6px",
@@ -76,109 +57,66 @@ export function CollectionCard({
         </Button>
       </div>
 
-      <div
-        className="product-collection-row"
-        style={{ display: "flex", flexWrap: "wrap", gap: "15px" }}
-      >
-        {product.slice(0, visibleCount).map((item, index) => {
-          const isFavorited = favorites.find(
-            (fav) => fav.model_no === item.model_no
-          );
-
-          return (
-            <Card
-              className="card"
-              key={index}
-              style={{ width: "18rem", position: "relative" }}
-            >
-              {/* Favorite heart */}
-              <div
-                onClick={() => toggleFavorite(item)}
-                style={{
-                  position: "absolute",
-                  top: "10px",
-                  right: "10px",
-                  cursor: "pointer",
-                  fontSize: "1.5rem",
-                  color: isFavorited ? "var(--royal-blue)" : "var(--iron)",
-                  userSelect: "none",
-                  zIndex: 5,
-                }}
-                title={
-                  isFavorited ? "Remove from favorites" : "Add to favorites"
-                }
-              >
-                {isFavorited ? "❤️" : "🤍"}
-              </div>
-
-              <Card.Img
-                variant="top"
-                style={{
-                  height: "150px",
-                  width: "100%",
-                  objectFit: "cover",
-                }}
-                src={item.image_paths[0]}
-              />
-              <Card.Body style={{ backgroundColor: "var(--light-blue-3)" }}>
-                <Card.Title>{item.brand}</Card.Title>
-                <Card.Text>
-                  <strong>Model: </strong> {item.model_no} <br />
-                  <strong>Price: </strong> {item.product_price} <br />
-                  <strong>Product Type: </strong> {item.product_type} <br />
-                  <strong>Frame Type: </strong> {item.frame_type} <br />
-                  <strong>Rating: </strong>
-                  {Array.from({ length: 5 }, (_, i) => (
-                    <span
-                      key={i}
-                      style={{
-                        color: "#FB8500",
-                        fontSize: "2em",
-                        letterSpacing: "3px",
-                        verticalAlign: "middle",
-                      }}
-                    >
-                      {i < Math.round(item.rating || 0) ? "★" : "☆"}
-                    </span>
-                  ))}
-                  {item.rating ? ` (${item.rating})` : " (No rating)"}
-                </Card.Text>
-                <div
-                  className="button-container"
-                  style={{ display: "flex", gap: "10px" }}
-                >
-                  <Button
-                    variant="primary"
-                    className="action-button"
-                    onClick={() => handleAddToCart(item)}
-                  >
-                    Add to Cart
-                  </Button>
-                  <Button
-                    className="action-button"
-                    variant="secondary"
+      <div className="product-collection-row">
+        {product.slice(0, visibleCount).map((item, index) => (
+          <Card className="card" key={index} style={{ width: "18rem" }}>
+            <Card.Img
+              variant="top"
+              style={{
+                height: "150px",
+                width: "100%",
+                objectFit: "cover",
+              }}
+              src={item.image_paths[0]}
+            />
+            <Card.Body style={{ backgroundColor: "var(--light-blue-3)" }}>
+              <Card.Title>{item.brand}</Card.Title>
+              <Card.Text>
+                <strong>Model: </strong> {item.model_no} <br />
+                <strong>Price: </strong> {item.product_price} <br />
+                <strong>Product Type: </strong> {item.product_type} <br />
+                <strong>Frame Type: </strong> {item.frame_type} <br />
+                <strong>Rating: </strong>
+                {Array.from({ length: 5 }, (_, i) => (
+                  <span
+                    key={i}
                     style={{
-                      color: "var(--ebony)",
-                      backgroundColor: "var(--iron)",
+                      color: "#FB8500",
+                      fontSize: "2em",
+                      letterSpacing: "3px",
+                      verticalAlign: "middle",
                     }}
                   >
-                    Buy Now
-                  </Button>
-                </div>
-              </Card.Body>
-            </Card>
-          );
-        })}
+                    {i < Math.round(item.rating || 0) ? "★" : "☆"}
+                  </span>
+                ))}
+                {item.rating ? ` (${item.rating})` : " (No rating)"}
+              </Card.Text>
+              <div className="button-container">
+                <Button variant="primary" className="action-button">
+                  Add to Cart
+                </Button>
+                <Button
+                  className="action-button"
+                  variant="secondary"
+                  style={{
+                    color: "var(--ebony)",
+                    backgroundColor: "var(--iron)",
+                  }}
+                >
+                  Buy Now
+                </Button>
+              </div>
+            </Card.Body>
+          </Card>
+        ))}
       </div>
       <div
         style={{
           display: "flex",
           justifyContent: "center",
-          alignItems: "center",
+          alignItem: "center",
           marginTop: "20px",
-          cursor: "pointer",
-          color: "var(--royal-blue)",
-          fontSize: "1.3rem",
         }}
       >
         {visibleCount < product.length ? (
@@ -187,6 +125,69 @@ export function CollectionCard({
           <ChevronsUp onClick={handleShowLess} />
         )}
       </div>
+
+      {/* filter modal */}
+      <Modal show={showFilterModal} onHide={handleFilterClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Filter Products</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group controlId="filter-category">
+              <Form.Label>Category</Form.Label>
+              <Form.Select>
+                <option value="">All</option>
+                <option value="Eyeglasses">Eyeglasses</option>
+                <option value="Sunglasses">Sunglasses</option>
+                <option value="Contact Lens">Contact Lens</option>
+                <option value="Reading Glasses">Reading Glasses</option>
+                <option value="Computer Glasses">Computer Glasses</option>
+                <option value="Accessories">Accessories</option>
+              </Form.Select>
+            </Form.Group>
+
+            <Form.Group controlId="filter-brand">
+              <Form.Label>Brand</Form.Label>
+              <Form.Select>
+                <option value="">All</option>
+                <option value="Ray-Ban">Ray-Ban</option>
+                <option value="Oakley">Oakley</option>
+                <option value="Titan">Titan</option>
+                <option value="Fastrack">Fastrack</option>
+                <option value="Vogue">Vogue</option>
+                <option value="Other">Other</option>
+              </Form.Select>
+            </Form.Group>
+
+            <Form.Group controlId="filter-color">
+              <Form.Label>Frame Color</Form.Label>
+              <Form.Select>
+                <option value="">All</option>
+                <option value="Black">Black</option>
+                <option value="Brown">Brown</option>
+                <option value="Blue">Blue</option>
+                <option value="Gold">Gold</option>
+                <option value="Silver">Silver</option>
+                <option value="Other">Other</option>
+              </Form.Select>
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleFilterClose}>
+            Reset
+          </Button>
+          <Button
+            variant="primary"
+            onClick={() => {
+              // filter logic
+              handleFilterClose();
+            }}
+          >
+            Apply Filters
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }

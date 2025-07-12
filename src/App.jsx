@@ -31,6 +31,7 @@ export default function App() {
       <main>
         <Home />
         <CollectionCard
+          products={products}
           product={filteredProducts}
           cartItems={cartItems}
           setCartItems={setCartItems}
