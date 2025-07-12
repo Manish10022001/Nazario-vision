@@ -5,7 +5,7 @@ import { Home } from "./Components/Home";
 import { Header } from "./Components/Header";
 import { EyewearTypeSection } from "./Components/EyewearTypeSection";
 import { CollectionCard } from "./Components/CollectionCard";
-
+import { ReviewSection } from "./Components/ReviewSection";
 import { Footer } from "./Components/Footer";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -38,7 +38,8 @@ export default function App() {
           setFavorites={setFavorites}
         />
         <EyewearTypeSection type={type} />
-        
+
+        <ReviewSection />
       </main>
       <Footer />
     </>
